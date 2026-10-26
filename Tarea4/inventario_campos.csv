@@ -1,0 +1,59 @@
+﻿tabla,campo,tipo_generico,es_pk,es_fk,nulo,descripcion
+area_estudio,id_area,intid,True,False,False,Identificador del area academica
+area_estudio,nombre_area,varchar:120,False,False,False,Nombre unico del area
+area_estudio,facultad,varchar:140,False,False,False,Facultad a la que pertenece el area
+usuario,id_usuario,intid,True,False,False,Identificador de estudiante
+usuario,id_area,int,False,True,False,Area de estudio principal
+usuario,nombre_completo,varchar:160,False,False,False,Nombre visible del estudiante
+usuario,correo_institucional,varchar:180,False,False,False,Correo de acceso institucional
+usuario,fecha_nacimiento,date,False,False,True,Fecha de nacimiento
+usuario,fecha_registro,timestamp,False,False,False,Fecha de alta en UTC
+usuario,foto_perfil,text,False,False,True,URL de fotografia
+usuario,biografia,text,False,False,True,Descripcion del perfil
+interes_habilidad,id_interes,intid,True,False,False,Identificador del interes o habilidad
+interes_habilidad,nombre,varchar:120,False,False,False,Nombre de la actividad
+interes_habilidad,categoria,varchar:80,False,False,False,Categoria academica o extracurricular
+usuario_interes,id_usuario,int,True,True,False,Usuario que declara interes
+usuario_interes,id_interes,int,True,True,False,Habilidad/interes compartido
+usuario_interes,nivel,varchar:40,False,False,False,Nivel autodeclarado del usuario
+conexion,id_usuario_origen,int,True,True,False,Emisor de la conexion
+conexion,id_usuario_destino,int,True,True,False,Receptor de la conexion
+conexion,estado,varchar:40,False,False,False,Estado de la conexion
+conexion,fecha_conexion,timestamp,False,False,False,Fecha de solicitud en UTC
+grupo,id_grupo,intid,True,False,False,Identificador del grupo
+grupo,id_usuario_creador,int,False,True,False,Creador del grupo
+grupo,nombre_grupo,varchar:160,False,False,False,Nombre de la comunidad
+grupo,descripcion,text,False,False,True,Proposito del grupo
+grupo,tipo_grupo,varchar:60,False,False,False,Clase de grupo
+grupo,fecha_creacion,timestamp,False,False,False,Fecha de creacion en UTC
+membresia_grupo,id_usuario,int,True,True,False,Miembro
+membresia_grupo,id_grupo,int,True,True,False,Grupo al que pertenece
+membresia_grupo,rol,varchar:40,False,False,False,Rol del miembro
+membresia_grupo,fecha_ingreso,timestamp,False,False,False,Fecha de ingreso UTC
+publicacion,id_publicacion,intid,True,False,False,Identificador de publicacion
+publicacion,id_usuario,int,False,True,False,Autor
+publicacion,id_grupo,int,False,True,True,Grupo receptor opcional
+publicacion,tipo,varchar:50,False,False,False,Clase de contenido
+publicacion,contenido,text,False,False,False,Mensaje publicado
+publicacion,fecha_publicacion,timestamp,False,False,False,Fecha UTC de publicacion
+comentario,id_comentario,intid,True,False,False,Identificador comentario
+comentario,id_usuario,int,False,True,False,Autor del comentario
+comentario,id_publicacion,int,False,True,False,Publicacion comentada
+comentario,contenido,text,False,False,False,Texto del comentario
+comentario,fecha_comentario,timestamp,False,False,False,Fecha UTC del comentario
+reaccion,id_usuario,int,True,True,False,Usuario que reacciona
+reaccion,id_publicacion,int,True,True,False,Publicacion objetivo
+reaccion,tipo_reaccion,varchar:40,False,False,False,Tipo de reaccion
+reaccion,fecha_reaccion,timestamp,False,False,False,Fecha UTC de reaccion
+evento,id_evento,intid,True,False,False,Identificador del evento
+evento,id_usuario_organizador,int,False,True,False,Responsable de la actividad
+evento,id_grupo,int,False,True,True,Grupo organizador opcional
+evento,nombre_evento,varchar:180,False,False,False,Nombre del evento
+evento,descripcion,text,False,False,True,Detalles descriptivos
+evento,fecha_hora_inicio,timestamp,False,False,False,Inicio del evento UTC
+evento,fecha_hora_fin,timestamp,False,False,False,Fin del evento UTC
+evento,ubicacion,text,False,False,False,Lugar o URL
+evento,metadatos_contexto,json,False,False,True,Objeto flexible con ubicacion geografica e instantanea de sensores IoT; sin series extensas
+asistencia_evento,id_usuario,int,True,True,False,Participante
+asistencia_evento,id_evento,int,True,True,False,Evento
+asistencia_evento,estado_asistencia,varchar:30,False,False,False,Estado de confirmacion

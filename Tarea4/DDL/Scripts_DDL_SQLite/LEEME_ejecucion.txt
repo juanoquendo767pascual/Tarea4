@@ -1,0 +1,1 @@
+SQLite 3.38+ con funciones JSON integradas. Abrir un archivo nuevo, ejecutar 01 (activar PRAGMA foreign_keys antes de BEGIN), 02 y 03. Activar PRAGMA foreign_keys=ON en CADA nueva conexion. JSON se guarda en TEXT validado con JSON1. Verificacion real en SQLite 3.46.1: 12 tablas, 58 columnas, 18 FK, 7 rechazos correctos. La base de demostracion esta en Evidencias.

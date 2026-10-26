@@ -1,0 +1,35 @@
+digraph G {
+graph [rankdir=LR, splines=polyline, overlap=false, bgcolor="white", nodesep="0.45",ranksep="1.0",pad="0.35"];
+node [shape=record, fontname="DejaVu Sans",fontsize=9,style="rounded,filled",fillcolor="#E9F4F6",color="#246778",fontcolor="#173B49"];
+edge [color="#7C929F", arrowsize="0.55",fontsize=7,fontname="DejaVu Sans"];
+"area_estudio" [label="AREA_ESTUDIO\nid_area"];
+"usuario" [label="USUARIO\nid_usuario"];
+"interes_habilidad" [label="INTERES_HABILIDAD\nid_interes"];
+"usuario_interes" [label="USUARIO_INTERES\nid_usuario, id_interes"];
+"conexion" [label="CONEXION\nid_usuario_origen, id_usuario_destino"];
+"grupo" [label="GRUPO\nid_grupo"];
+"membresia_grupo" [label="MEMBRESIA_GRUPO\nid_usuario, id_grupo"];
+"publicacion" [label="PUBLICACION\nid_publicacion"];
+"comentario" [label="COMENTARIO\nid_comentario"];
+"reaccion" [label="REACCION\nid_usuario, id_publicacion"];
+"evento" [label="EVENTO\nid_evento\n+ metadatos_contexto (JSON)",fillcolor="#FFF2DC"];
+"asistencia_evento" [label="ASISTENCIA_EVENTO\nid_usuario, id_evento"];
+"usuario" -> "area_estudio" [label="id_area"];
+"usuario_interes" -> "usuario" [label="id_usuario"];
+"usuario_interes" -> "interes_habilidad" [label="id_interes"];
+"conexion" -> "usuario" [label="id_usuario_origen"];
+"conexion" -> "usuario" [label="id_usuario_destino"];
+"grupo" -> "usuario" [label="id_usuario_creador"];
+"membresia_grupo" -> "usuario" [label="id_usuario"];
+"membresia_grupo" -> "grupo" [label="id_grupo"];
+"publicacion" -> "usuario" [label="id_usuario"];
+"publicacion" -> "grupo" [label="id_grupo"];
+"comentario" -> "usuario" [label="id_usuario"];
+"comentario" -> "publicacion" [label="id_publicacion"];
+"reaccion" -> "usuario" [label="id_usuario"];
+"reaccion" -> "publicacion" [label="id_publicacion"];
+"evento" -> "usuario" [label="id_usuario_organizador"];
+"evento" -> "grupo" [label="id_grupo"];
+"asistencia_evento" -> "usuario" [label="id_usuario"];
+"asistencia_evento" -> "evento" [label="id_evento"];
+}

@@ -1,0 +1,12 @@
+Verificacion local | SQLite 3.46.1 | 2026-10-25
+12 tablas: 12; 58 campos: 58; 18 FK: 18
+Consulta JSON: temperatura_c = 24.1
+Pruebas de rechazo de datos invalidos:
+ - JSON mal formado: BLOQUEADO (CHECK constraint failed: ck_evento_metadatos_objeto)
+ - JSON arreglo, se requiere objeto: BLOQUEADO (CHECK constraint failed: ck_evento_metadatos_objeto)
+ - Evento: fin anterior al inicio: BLOQUEADO (CHECK constraint failed: ck_evento_fechas)
+ - Clave foranea inexistente: BLOQUEADO (FOREIGN KEY constraint failed)
+ - Correo institucional duplicado: BLOQUEADO (UNIQUE constraint failed: usuario.correo_institucional)
+ - Nombre demasiado largo (SQLite): BLOQUEADO (CHECK constraint failed: ck_area_estudio_nombre_area_long)
+ - Auto-conexion: BLOQUEADO (CHECK constraint failed: ck_conexion_distinta)
+NOTA: PostgreSQL y MySQL no se ejecutaron localmente; scripts generados para validacion en los motores indicados.
