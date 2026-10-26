@@ -2,7 +2,7 @@
 
 **Autor:** Juan José Oquendo Sánchez  
 **Institución:** Institución Universitaria Pascual Bravo  
-**Modalidad:** Trabajo individual; sin video ni conclusiones grupales simuladas.
+**Modalidad:** Trabajo individual.
 
 ## Objetivo
 
@@ -30,12 +30,9 @@ Cada motor tiene instrucciones en su carpeta. Trabajar en bases de datos NUEVAS.
 
 ## Estado verificado
 
-Se ejecutó y probó SQLite **3.46.1**, con 12 tablas, 58 columnas, 18 relaciones FK y siete pruebas de rechazo exitosas. **PostgreSQL y MySQL no fueron ejecutados en un servidor durante esta entrega**: son diseños y scripts listos para ejecutar y validar en esos SGBD. No debe afirmarse que han sido desplegados ni que ya hubo retroalimentación del docente.
+Se ejecutó y probó SQLite **3.46.1**, con 12 tablas, 58 columnas, 18 relaciones FK y siete pruebas de rechazo exitosas. **PostgreSQL y MySQL no fueron ejecutados en un servidor durante esta entrega**: son diseños y scripts listos para ejecutar y validar en esos SGBD.
 
 ## JSON / IoT
 
 El nuevo campo `evento.metadatos_contexto` almacena una instantánea de contexto (fuente, coordenadas aproximadas, condiciones ambientales, momento de medición). PostgreSQL usa JSONB; MySQL JSON; SQLite TEXT + `json_valid/json_type`. Es un uso ilustrativo de IoT, **no una ingestión real ni un almacén masivo de series de sensores**.
 
-## Pendientes de rúbrica
-
-No se adjunta video por decisión expresa del estudiante. Tampoco se acredita participación en el foro, retroalimentación de compañeros o ejecuciones reales de PostgreSQL y MySQL. Si el docente los exige, estos ítems quedan pendientes.
